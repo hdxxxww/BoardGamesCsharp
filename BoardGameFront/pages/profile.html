@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой профиль - BoardGameWiki</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+    <header id="header-placeholder"></header>
+
+    <main class="container-md my-4 flex-grow-1">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                
+                <div class="card bg-dark border-secondary shadow-sm">
+                    <div class="card-header border-secondary pb-0">
+                        <h4 class="mb-3 mt-2">Личный кабинет</h4>
+                        
+                        <ul class="nav nav-tabs border-secondary" id="profileTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active text-light" id="info-tab" data-bs-toggle="tab" data-bs-target="#info" type="button" role="tab">Основное</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link text-secondary" id="password-tab" data-bs-toggle="tab" data-bs-target="#password" type="button" role="tab">Безопасность</button>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card-body p-4">
+                        <div class="tab-content" id="profileTabsContent">
+                            
+                            <div class="tab-pane fade show active" id="info" role="tabpanel">
+                                <form>
+                                    <div class="mb-3">
+                                        <label class="form-label text-secondary">Почта</label>
+                                        <input type="email" class="form-control bg-dark text-secondary border-secondary" value="gamer@example.com" disabled readonly>
+                                    </div>
+                                    
+                                    <div class="mb-4">
+                                        <label class="form-label">Имя пользователя (уникальное)</label>
+                                        <input type="text" class="form-control bg-dark text-light border-secondary" value="BoardGamer99">
+                                    </div>
+                                    
+                                    <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+                                </form>
+                            </div>
+                            
+                            <div class="tab-pane fade" id="password" role="tabpanel">
+                                <form>
+                                    <div class="mb-3">
+                                        <label class="form-label">Текущий пароль</label>
+                                        <input type="password" class="form-control bg-dark text-light border-secondary" placeholder="Введите текущий пароль">
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label class="form-label">Новый пароль</label>
+                                        <input type="password" class="form-control bg-dark text-light border-secondary" placeholder="Минимум 6 символов">
+                                    </div>
+                                    
+                                    <div class="mb-4">
+                                        <label class="form-label">Повторите новый пароль</label>
+                                        <input type="password" class="form-control bg-dark text-light border-secondary" placeholder="Повторите пароль">
+                                    </div>
+                                    
+                                    <button type="submit" class="btn btn-warning">Сменить пароль</button>
+                                </form>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4 text-center">
+                    <button class="btn btn-outline-danger">Выйти из аккаунта</button>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer-placeholder" class="mt-auto"></footer>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script>
+        fetch('../includes/header.html')
+            .then(response => response.text())
+            .then(html => document.getElementById('header-placeholder').innerHTML = html)
+            .catch(error => console.error('Ошибка загрузки хедера:', error));
+
+        fetch('../includes/footer.html')
+            .then(response => response.text())
+            .then(html => document.getElementById('footer-placeholder').innerHTML = html)
+            .catch(error => console.error('Ошибка загрузки футера:', error));
+    </script>
+</body>
+
+</html>

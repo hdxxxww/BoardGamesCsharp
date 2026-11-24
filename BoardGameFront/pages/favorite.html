@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Избранное - BoardGameWiki</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+    <header id="header-placeholder"></header>
+
+    <main class="container-md my-4 flex-grow-1">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="mb-0">Мои избранные игры</h2>
+        </div>
+        
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <div class="col">
+                <div class="card h-100 bg-dark border-secondary">
+                    <img src="" class="card-img-top" alt="">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Название</h5>
+                        <p class="card-text text-secondary small mb-3">x-x игроков</p>
+                        <div class="mt-auto">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="badge bg-success">x / 10</span>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <a href="game.html" class="btn btn-sm btn-outline-primary">Подробнее</a>
+                                <button class="btn btn-sm btn-outline-danger">Удалить</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer-placeholder" class="mt-auto"></footer>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script>
+        fetch('../includes/header.html')
+            .then(response => response.text())
+            .then(html => document.getElementById('header-placeholder').innerHTML = html)
+            .catch(error => console.error('Ошибка загрузки хедера:', error));
+
+        fetch('../includes/footer.html')
+            .then(response => response.text())
+            .then(html => document.getElementById('footer-placeholder').innerHTML = html)
+            .catch(error => console.error('Ошибка загрузки футера:', error));
+    </script>
+</body>
+
+</html>
