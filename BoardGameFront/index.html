@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoardGameWiki</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div id="header-placeholder"></div>
+    </header>
+
+    <section>
+        <div class="p-5 mb-4 bg-dark rounded-3" data-bs-theme="dark">
+            <div class="container-md py-5">
+                <h1 class="display-5 fw-bold">BoardGames Wiki</h1>
+                <p class="col-md-8 fs-4">Ваш гид в мире настольных игр. Найдите идеальную игру для любой компании.</p>
+                <button class="btn btn-primary btn-lg" type="button">Смотреть подборку</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-md mb-4">
+        <h2 class="mb-4">Топ 5 новых игр!</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-md mb-4" style="margin-top: 100px;">
+        <h2 class="mb-4">Топ 5 игр за всё время!</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container-md py-5">
+            <button class="btn btn-primary btn-lg" type="button">Смотреть подборку</button>
+        </div>
+    </section>
+
+    <footer>
+        <div id="footer-placeholder"></div>
+    </footer>
+</body>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script>
+    fetch('includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Ошибка загрузки хедера');
+            return response.text();
+        })
+        .then(html => {
+            document.getElementById('header-placeholder').innerHTML = html;
+        })
+        .catch(error => console.error(error));
+
+    fetch('includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Ошибка загрузки футера');
+            return response.text();
+        })
+        .then(html => {
+            document.getElementById('footer-placeholder').innerHTML = html;
+        })
+        .catch(error => console.error(error));
+</script>
+
+</html>
