@@ -1,0 +1,11 @@
+[Bb]in/
+[Oo]bj/
+*.user
+*.suo
+
+node_modules/
+package-lock.json
+
+.DS_Store
+Thumbs.db
+.vscode/
